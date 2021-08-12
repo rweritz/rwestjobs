@@ -42,6 +42,7 @@ RUN apt-get install -y \
     libxss1 \
     libxtst6 \
     xdg-utils
+RUN apt-get clean
 
 # Install pip requirements
 COPY requirements.txt .
