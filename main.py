@@ -38,7 +38,9 @@ r = session.get(
 
 r.html.render()
 job_offers = r.html.find("div.headtext")
+print()
 print("-------------RWEST IT Job Offers-------------")
+print()
 for job_offer in job_offers:
     job_offer_attr = job_offer.text.split("\n")
     print("Role: " + job_offer_attr[0])
