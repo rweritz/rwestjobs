@@ -1,10 +1,15 @@
 from requests_html import HTMLSession
+from datetime import date
+
+today = date.today()
+enddate = date(today.year + 2, today.month, today.day)
+gdpr_settings = "1|true|{0:%d/%m/%Y}|{1:%d/%m/%Y}|454930304".format(today, enddate)
 
 cookies = {
     "rwe#lang": "en",
     "fonts-all-loaded": "is-cached",
     "et_allow_cookies": "0",
-    "gdpr-settings-cookie": "1|true|8/12/2021|8/12/2023|454930304",
+    "gdpr-settings-cookie": gdpr_settings,
 }
 
 headers = {
